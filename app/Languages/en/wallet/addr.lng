@@ -1,0 +1,67 @@
+# Список адресов и адресная книга
+> group: addr
+
+[group]
+	> keywords: client
+
+	addr: Address
+	hidden: Hidden
+	visible: Visible
+
+	# Заголовок и плейсхолдер поля ввода метки адреса
+	# Используется при создании и редактировании адреса
+	label: Label
+    label_pl: Enter label...
+
+	# Заголовок панели выбора адреса
+    select: Select address
+[end]
+
+# Заголовок страницы
+header: Addresses
+
+# Заголовок панели
+panel: My addresses
+
+# Окно создания адреса
+[group:new]
+	> keywords: client
+	header: New address creation
+	text: Are you sure you want to create a new address? It cannot be deleted after creation.
+	err_header: Failed to create new address
+[end:new]
+
+# Окно редактирования адреса
+[group:edit]
+	> keywords: client
+	header: Address editing
+	err_header: Failed to edit address
+[end:edit]
+
+# Адресная книга
+[group:book]
+	panel: Address book
+
+	# Окно удаления адреса из адресной книги
+    [group:del]
+    	> keywords: client
+    	header: Address deleting
+    	text: Are you sure you want to delete the address from the address book?
+    	err_header: Failed to delete address
+    [end:del]
+
+    [group:add]
+		> keywords: client
+		header: Address adding
+		addr_pl: Enter address...
+		err_header: Failed to add address
+    [end:add]
+[end:book]
+
+# Серверные ошибки
+[group:err]
+	not_exist: Address does not exist.
+	wrong: Specified address is not the address of Universe cryptocurrency.
+    already: Specified address is already in the address book.
+    limit: You have reached the limit of the number of addresses. Maximum you can add %d addresses.
+[end:err]

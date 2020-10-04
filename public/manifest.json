@@ -1,0 +1,11 @@
+{
+	"short_name": "Universe Wallet",
+	"name": "Univers Online Wallet",
+	"description": "Online web wallet for the Universe cryptocurrency.",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"orientation": "any",
+	"background_color": "#f0f1f2",
+	"theme_color": "#157bbf"
+}

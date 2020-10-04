@@ -1,0 +1,19 @@
+# Блокировка кошелька
+> group: lock
+
+> keywords: client
+
+heading: Wallet is locked!
+pass_pl: Enter password...
+for_unlock: To unlock, enter
+or_exit: Or you can exit
+
+[group:err]
+	[group]
+		> keywords: client
+		lock_header: Lock error
+		lock_text: Failed to lock the wallet!
+		unlock_header: Unlock error
+		unlock_text: Failed to unlock the wallet!
+	[end]
+[end:err]

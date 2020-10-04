@@ -1,0 +1,96 @@
+
+$menu-padding: 13px;
+
+.menu
+{
+	$icon-width: 24px;
+
+	background: $color-main-darker;
+	margin: 0;
+	padding: 0;
+	z-index: 0;
+
+	nav
+	{
+		display: flex;
+		flex-direction: column;
+
+		span
+		{
+			color: white;
+			margin-left: 15px;
+			font-size: 16px;
+		}
+	}
+
+	a
+	{
+		line-height: 0;
+		padding: $menu-padding $menu-padding 7px;
+
+		img, svg
+		{
+			width: $icon-width;
+			height: $icon-width;
+
+		}
+
+		&:before
+		{
+			bottom: 0;
+			border-bottom: 3px solid #4bb4fa;
+			transition: .1s;
+			width: 0;
+			left: 50%;
+		}
+
+		&:hover:before,
+		&.active:before
+		{
+			width: $icon-width;
+			left: $menu-padding;
+		}
+
+		*
+		{
+			vertical-align: middle;
+		}
+	}
+}
+
+//@media (max-width: 768px)
+@include media-breakpoint-down(md)
+{
+	.menu
+	{
+		position: absolute;
+		z-index: 9001;
+		box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .2);
+		padding-bottom: $menu-padding;
+
+		&.mob-hidden
+		{
+			display: none;
+		}
+	}
+}
+
+//@media (min-width: 769px)
+@include media-breakpoint-up(lg)
+{
+	.menu
+	{
+		nav span
+		{
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 360px)
+{
+	.menu
+	{
+		width: 100%;
+	}
+}

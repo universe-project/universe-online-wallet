@@ -1,0 +1,15 @@
+.changelog-section
+{
+	* + &
+	{
+		margin-top: 20px;
+	}
+}
+
+.changelog-panel
+{
+	& + &
+	{
+		margin-top: 20px;
+	}
+}

@@ -1,0 +1,22 @@
+> group: act
+
+header: Account activation
+
+# Описание процесса на странице активации
+desc: To activate your account click the button below. After activation you can login using your email and password.
+
+# Текст кнопки на странице активации
+btn: Activate
+
+[group:err]
+	[group]
+		> keywords: client
+		header: Activation error
+		link: There is an error in the activation link. Contact the administrator to resolve this problem.
+	[end]
+
+	disabled: Accounts activation is disabled.
+	already: Account is already activated.
+	key: Failed to activate account. Contact the administrator to resolve this problem.
+	timeout: Timeout for the account activation.
+[end:err]

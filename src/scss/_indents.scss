@@ -1,0 +1,91 @@
+
+$sides: "mt" "mr" "mb" "ml";
+
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+@mixin make-margin($side, $indent)
+{
+	@if $side == mt
+	{
+		margin-top: $indent;
+	}
+	@else if $side == mr
+	{
+		margin-right: $indent;
+	}
+	@else if $side == mb
+	{
+		margin-bottom: $indent;
+	}
+	@else if $side == ml
+	{
+		margin-left: $indent;
+	}
+}
+
+@mixin make-indents($breakpoint, $side, $indents)
+{
+	//@if type_of($indents) != list
+	//{
+	//	@error "Indents should be type of list.";
+	//}
+
+	@if not(index($sides, $side))
+	{
+		@error "Wrong side.";
+	}
+
+	@if map-has-key($breakpoints, $breakpoint)
+	{
+		@media (min-width: #{map-get($breakpoints, $breakpoint)})
+		{
+			@each $indent in $indents
+			{
+				@if type-of($indent) == number
+				{
+					.#{$side}-#{$breakpoint}-#{strip-unit($indent)}
+					{
+						@include make-margin($side, $indent);
+					}
+				}
+			}
+		}
+	}
+	@else
+	{
+		// Default
+
+		@each $indent in $indents
+		{
+			@if type-of($indent) == number
+			{
+				.#{$side}-#{strip-unit($indent)}
+				{
+					@include make-margin($side, $indent);
+				}
+			}
+		}
+	}
+}
+
+// Default
+@include make-indents(default, mt, 5px 10px 15px 20px 40px);
+@include make-indents(default, ml, 0px 5px 10px 15px 20px 30px 40px);
+@include make-indents(default, mr, 5px);
+
+// Small
+@include make-indents(sm, mt, 0px);
+@include make-indents(sm, ml, 10px 20px);
+
+// Large
+@include make-indents(lg, mt, 0px);
+@include make-indents(lg, ml, 10px 20px 30px);
+
+// Extra large
+@include make-indents(xl, ml, 40px);

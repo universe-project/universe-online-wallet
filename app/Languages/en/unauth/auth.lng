@@ -1,0 +1,12 @@
+# Авторизация
+> group: auth
+
+# Заголовок на странице авторизации
+auth: Authorization
+
+# Плейсхолдеры для полей ввода
+email_ph: {user.email}...
+pass_ph: {user.pass}...
+enter_btn: Login
+
+wrong_data: Wrong email or password.

@@ -1,0 +1,9 @@
+# ПИН-код
+> group: pin
+
+[group]
+	> keywords: client
+	pin: PIN
+[end]
+
+wrong: The PIN is incorrect.

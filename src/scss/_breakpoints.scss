@@ -1,0 +1,62 @@
+
+/// Responsive breakpoints
+$breakpoints: (
+	// Extra small devices (0px and up)
+	// xs
+
+	// Small devices (landscape phones, 576px and up)
+	sm: 576px,
+
+	// Medium devices (tablets, 768px and up)
+	md: 768px,
+
+	// Large devices (desktops, 992px and up)
+	lg: 992px,
+
+	// Extra large devices (large desktops, 1200px and up)
+	xl: 1200px
+);
+
+$breakpoints-down: (
+
+	// Extra small devices (portrait phones, less than 576px)
+	xs: 575px,
+
+	// Small devices (landscape phones, less than 768px)
+	sm: 767px,
+
+	// Medium devices (tablets, less than 992px)
+	md: 991px,
+
+	// Large devices (desktops, less than 1200px)
+	lg: 1199px
+
+	// Extra large devices (large desktops)
+);
+
+@mixin media-breakpoint-up($bp)
+{
+	@if map-has-key($breakpoints, $bp)
+	{
+		$bp: map-get($breakpoints, $bp);
+	}
+
+	@media (min-width: $bp)
+	{
+		@content;
+	}
+}
+
+@mixin media-breakpoint-down($bp)
+{
+	@if map-has-key($breakpoints-down, $bp)
+	{
+		$bp: map-get($breakpoints-down, $bp);
+	}
+
+	@media (max-width: $bp)
+	{
+		@content;
+	}
+
+}

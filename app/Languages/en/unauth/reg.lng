@@ -1,0 +1,56 @@
+# Регистрация
+> group: reg
+
+[group]
+	> keywords: client
+
+	reg: Sign up
+
+	# Заголовок всплывающего окна успешной регистрации
+	success_header: Successfully signed up
+
+	# Текст всплывающего окна
+	success: Congratulations, you have successfully created an account in the Universe Online Wallet service.
+
+	# Текст всплывающего окна, который добавляется в случае если включено подтверждение регистрации по e-mail
+	success_email: A message containing instructions for activating your account has been sent to your email address.
+[end]
+
+[group:email]
+	# Плейсхолдер поля ввода e-mail
+    pl: Enter e-mail...
+    # Подсказка для ввода e-mail адреса, если включено подтверждение регистрации по e-mail
+    tt_a: A message containing confirmation of the account creation will be sent to the specified email address.
+    # Подсказка для ввода e-mail адреса, если подтверждение регистрации по e-mail отключено
+    tt_na: Enter your valid email address.
+[end:email]
+
+[group:pass]
+	# Плейсхолдер поля ввода пароля
+	pl: Enter password...
+	# Плейсхолдер поля повторного ввода пароля
+	rep_pl: Enter password again...
+[end:pass]
+
+[group:captcha]
+	# Подпись поля капчи
+	lb: Verification
+	# Плейсхолдер поля капчи
+	pl: Enter code...
+[end:captcha]
+
+invites_warn: At the moment account creation is available only if you're invited.
+
+btn: Create an account
+
+# Соглашение
+agreement: By clicking &ldquo;Create an account&rdquo;, you agree to our <a data-part-link="info" data-pl-tabs="info_tab" data-pl-tab-num="1">terms of use</a> and <a data-part-link="info" data-pl-tabs="info_tab" data-pl-tab-num="3">privacy policy</a>.
+
+# Ошибки данных при регистрации
+# Остальные в группе user.err
+[group:err]
+	invite: You are not invited. You can receive an invitation by contacting the administration.
+[end:err]
+
+# E-mail сообщение о удачной регистрации
+success_msg: {include reg_msg}

@@ -1,0 +1,22 @@
+# Страница с информацией
+> group: info
+
+# Идентификаторы с приставкой 'f' - это заголовок вкладки, а с 'c' - содержание
+
+
+help: Help
+help_f: Help in using the service
+# Подключается не напрямую в шаблон, а через page.Info.php, так как подставляются динамические данные
+help_c: {include help_content}
+
+terms: Terms
+terms_f: Terms of use
+terms_c: {include terms_content}
+
+about: About
+about_f: Information about wallet
+about_c: {include about_content}
+
+privacy: Privacy
+privacy_f: Privacy policy
+privacy_c: {include privacy_content}

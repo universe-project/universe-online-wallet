@@ -1,0 +1,45 @@
+
+/// Капча
+.captcha
+{
+	/// Изображение капчи
+	&-img
+	{
+		width: auto;
+		opacity: 0.14;
+
+		&-container
+		{
+			position: relative;
+		}
+	}
+
+	/// Индикатор времени следующего обновления
+	&-upd-bar
+	{
+		$height: 3px;
+
+		position: absolute;
+		height: $height;
+		border-radius: $height;
+		background: $color-input-border;
+		width: 100%;
+		bottom: -$height * 2;
+		transition: .1s;
+	}
+
+	/// Иконка слева от капчи
+	&-left-icon
+	{
+		width: 24px;
+		height: 24px;
+		margin-left: 10px;
+		margin-right: 10px;
+		flex-shrink: 0;
+
+		*
+		{
+			fill: $color-input-border;
+		}
+	}
+}

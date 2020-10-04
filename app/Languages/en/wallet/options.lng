@@ -1,0 +1,108 @@
+# Параметры
+> group: options
+
+title: Options
+data: Personal data
+wallet: Wallet
+
+[group]
+	> keywords: client
+	wrong_data: Указаны неверные данные!
+	conf_pass_pl: Password...
+	params_err_header: Ошибка изменения параметров
+[end]
+
+# Поле смены e-mail адреса
+[group:email]
+	# Заголовок поля изменения email адреса
+	# Также используется как title страницы подтверждения смены e-mail адреса
+	lb: Email address change
+	pl: Enter new email address...
+	tt: Enter your valid email address.
+	# Используется вместо email_tt, если нужно подтвердить изменение по email
+	tt_conf: A confirmation message will be sent to the specified email address.
+	btn_tt: Change email
+	curr: Your current email
+
+	# Подтверждение изменения e-mail адреса
+	[group:conf]
+		# Описание действия
+		desc: To confirm the change of email address click the button below. After confirmation you will be redirected to the options page.
+
+		[group]
+			> keywords: client
+			err_header: Confirmation error
+			link_err: There is an error in the link. Contact the administrator.
+		[end]
+
+		mail: {include email_ch_msg}
+	[end:conf]
+
+	[group]
+		> keywords: client
+		header: Email address change
+		pass_lb: To confirm the operation, enter your password
+		conf_req_header: Confirmation is required
+		conf_req_desc: A confirmation message has been sent to the specified email address.
+	[end]
+
+	[group:err]
+		match: Specified email address is the same as your current email address.
+		already: You have already sent the request to change the email address. Wait at least a day to be able to send the new request.
+		not_yours: You cannot confirm request that not yours.
+		no_req: Request not found.
+		link_error: Failed to confirm the change of the email address. Try to manually put the link from message to the browser URL bar.
+		timeout: Timeout for the email change confirmation.
+	[end:err]
+[end:email]
+
+# Смена пароля
+[group:pass]
+	[group]
+		> keywords: client
+		# Используется также для заголовка всплывающего окна
+		lb: Password change
+		conf_lb: To confirm the operation, enter your current password
+		success: Password successfully changed.
+	[end]
+
+	pl: Enter new password...
+	rep_pl: Enter new password again...
+	btn_tt: Change password
+
+	[group:err]
+		wrong_cur: Specified current password is wrong.
+	[end:err]
+[end:pass]
+
+# Сдача
+[group:change]
+	lb: Address for change from payment
+	desc: If the address for the change is not specified, it will be selected randomly from one of your addresses during the formation of the transaction.
+
+	[group]
+		> keywords: client
+		pl: Enter address for change...
+	[end]
+[end:change]
+
+# Блокировка
+[group:lock]
+	lb: Automatically lock wallet
+
+	[group]
+		> keywords: client
+		never: Never
+		min5: After 5 minutes
+		min10: After 10 minutes
+		min15: After 15 minutes
+		min30: After 30 minutes
+	[end]
+[end:lock]
+
+pin_desc: If PIN-code is specified, it will be used to unlock the wallet and confirmation for the outgoing transactions.
+
+[group:err]
+	no_change_addr: Specified address for the change is not exist.
+	pin_format: The PIN-code entered in the wrong format.
+[end:err]

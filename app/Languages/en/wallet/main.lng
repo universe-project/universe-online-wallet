@@ -1,0 +1,17 @@
+
+> group: main
+
+header: Main
+
+balance: Balance
+in: Income
+out: Outgo
+
+# id в тегах используется для обновления данных в JS скрипте
+last_upd: Last update: <time id="stats-last-upd">01.01.1970 01:01:01</time>
+freq_upd: Updates every <span id="stats-upd-int">0</span> sec.
+
+open_addr: View address list
+open_trans: View transaction list
+
+last_trans: Last transactions

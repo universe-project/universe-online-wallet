@@ -1,0 +1,49 @@
+
+@include media-breakpoint-up(lg) {
+	.navbar {
+		.lock-ico {
+			height: 17px;
+			width: 17px;
+		}
+
+		.exit-ico {
+			height: 19px;
+			width: 19px;
+		}
+
+		.user-ico {
+			width: 18px;
+			height: 18px;
+		}
+
+		.lang-ico {
+			width: 18px;
+			height: 18px;
+		}
+	}
+}
+
+
+@include media-breakpoint-down(md) {
+	.navbar {
+		.send-ico {
+			height: 28px;
+			width: 28px;
+		}
+
+		.lock-ico {
+			height: 20px;
+			width: 20px;
+		}
+
+		.exit-ico {
+			height: 23px;
+			width: 23px;
+		}
+
+		.lang-ico {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

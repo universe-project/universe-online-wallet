@@ -1,0 +1,38 @@
+.ir-tooltip-obj
+{
+	background: white;
+	box-shadow: 0 2px 28px 0 rgba(0, 0, 0, .1);
+	color: $color-text-default;
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 12px;
+
+	&.top:before,
+	&.bottom:before,
+	&.left:before,
+	&.right:before
+	{
+		display: none;
+	}
+
+	&.top:after
+	{
+		border-top-color: white;
+	}
+
+	&.bottom:after
+	{
+		border-bottom-color: white;
+	}
+
+	&.left:after
+	{
+		border-left-color: white;
+	}
+
+	&.right:after
+	{
+		border-right-color: white;
+	}
+}

@@ -1,0 +1,11 @@
+# Смена языка
+> group: lang
+
+> keywords: client
+
+header: Выбор языка
+label: Выберите язык
+
+[group:err]
+	code: Язык с указанным кодом не найден.
+[end:err]

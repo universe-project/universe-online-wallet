@@ -1,0 +1,30 @@
+<h3>Общая информация</h3>
+<p>Онлайн-кошелёк криптовалюты Universe предоставляет возможность воспользоваться валютой без надобности установки стационарного кошелька.</p>
+
+<h3>Контакты</h3>
+
+<h3>Лицензии свободного ПО</h3>
+<p>Universe Online Wallet использует следующее свободное программное обеспечение:</p>
+<ul>
+	<li>
+		<a href="https://github.com/s-rayleigh/iridium-core" target="_blank">Iridium Core</a>
+		<p class="mt-5">
+			Лицензия: <a href="?page=license.gpl" target="_blank" data-ir-tt="Посмотреть текст лицензии GPL-3.0">GPL-3.0</a>, <a href="?page=license.lgpl" target="_blank" data-ir-tt="Посмотреть текст лицензии LGPL-3.0">LGPL-3.0</a><br>
+			Копирайт 2018 Владислав Пашаев
+		</p>
+	</li>
+	<li>
+		<a href="https://github.com/s-rayleigh/iridium-framework" target="_blank">Iridium Framework</a>
+		<p class="mt-5">
+			Лицензия: <a href="?page=license.gpl" target="_blank" data-ir-tt="Посмотреть текст лицензии GPL-3.0">GPL-3.0</a>, <a href="?page=license.lgpl" target="_blank" data-ir-tt="Посмотреть текст лицензии LGPL-3.0">LGPL-3.0</a><br>
+			Копирайт 2018 Владислав Пашаев
+		</p>
+	</li>
+	<li>
+		<a href="https://github.com/s-rayleigh/iridium-icons" target="_blank">Iridium Icons</a>
+		<p class="mt-5">
+			Лицензия: <a href="?page=license.mit" target="_blank" data-ir-tt="Посмотреть текст лицензии MIT">MIT</a><br>
+			Копирайт 2018 Владислав Пашаев
+		</p>
+	</li>
+</ul>

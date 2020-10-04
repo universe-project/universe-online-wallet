@@ -1,0 +1,11 @@
+.idea/
+node_modules/
+project_files/
+
+# Files created by wallet
+logs/
+cache/
+
+# Frontend assemblies
+public/css/
+public/js/

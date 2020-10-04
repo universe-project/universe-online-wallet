@@ -1,0 +1,78 @@
+
+.pagination-text
+{
+	font-size: 16px;
+	margin: 0 20px;
+}
+
+.transaction
+{
+	display: flex;
+
+	& + &
+	{
+		@extend %list-elements-margin;
+	}
+}
+
+.tr
+{
+	&-icon
+	{
+		&-in,
+		&-out
+		{
+			width: 60px;
+			height: 60px;
+		}
+
+		&-in *
+		{
+			fill: $color-green;
+		}
+
+		&-out *
+		{
+			fill: $color-red;
+		}
+	}
+
+	&-type
+	{
+		font-size: 18px;
+	}
+}
+
+@include media-breakpoint-down(md)
+{
+	.transactions-section
+	{
+		flex-direction: column;
+
+	}
+}
+
+@include media-breakpoint-down(sm)
+{
+	.transactions-section
+	{
+		align-items: stretch;
+	}
+}
+
+@include media-breakpoint-down(xs)
+{
+	.tr-img-container
+	{
+		display: none;
+	}
+}
+
+// IPhone 4
+@include media-breakpoint-down(330px)
+{
+	.transaction
+	{
+		font-size: 11px;
+	}
+}

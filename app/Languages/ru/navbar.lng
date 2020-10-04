@@ -1,0 +1,14 @@
+> group: navbar
+
+currency: Валюта
+send_money: Отправить средства
+lock_wallet: Заблокировать кошелёк
+change_lang: Сменить язык
+exit: Выйти
+
+[group:page]
+	main: Главная
+	addresses: Адреса
+	transactions: Транзакции
+	options: Параметры
+[end:page]

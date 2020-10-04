@@ -1,0 +1,299 @@
+html, body
+{
+	margin: 0;
+	padding: 0;
+	font-family: $font;
+	font-size: 12px;
+	line-height: 1;
+	background: $color-bg;
+	color: $color-text-default;
+}
+
+@include media-breakpoint-up(xl)
+{
+	body
+	{
+		font-size: $font-size;
+	}
+}
+
+body
+{
+	position: relative;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+
+	&.overlay
+	{
+		height: 100vh;
+		overflow: hidden;
+	}
+}
+
+*
+{
+	box-sizing: border-box;
+}
+
+::-moz-focus-inner
+{
+	border: 0;
+}
+
+:-moz-focusring
+{
+	border: none;
+}
+
+// Layout contains left menu and content
+.layout
+{
+	display: flex;
+	flex-grow: 1;
+}
+
+// Content of the page
+.content
+{
+	flex-grow: 1;
+
+	padding-top: 20px;
+
+	// Padding for copyright placement
+	padding-bottom: $content-padding;
+
+}
+
+// Section
+
+.section
+{
+	margin: 0 auto;
+
+	&-fluid
+	{
+		width: 100%;
+	}
+
+	&-row,
+	&-col
+	{
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 20px;
+	}
+
+	&-row
+	{
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	&-col
+	{
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
+
+.multicol
+{
+	$margin: 35px;
+
+	margin-left: -$margin;
+	margin-top: -$margin;
+	flex-wrap: wrap;
+
+	> *
+	{
+		margin-left: $margin;
+		margin-top: $margin;
+	}
+}
+
+.flex-fill
+{
+	flex-grow: 1;
+	flex-basis: 0;
+}
+
+@include media-breakpoint-up(xl)
+{
+	.content
+	{
+		padding-top: $content-padding;
+	}
+
+	.section
+	{
+		width: 1170px;
+
+		&-row
+		{
+			padding: 0 $content-padding;
+		}
+	}
+}
+
+// Panel
+
+// Also used in popup header
+%panel-header-styles
+{
+	background: $color-main;
+	padding: 13px 15px;
+	color: $color-text-control;
+	font-size: 24px;
+}
+
+@include media-breakpoint-down(xs)
+{
+	%panel-header-styles
+	{
+		font-size: 18px;
+		padding: 10px 13px;
+	}
+}
+
+.panel
+{
+	background: white;
+	box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .1);
+
+	&-header
+	{
+		@extend %panel-header-styles;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.action-btn
+		{
+			margin-left: 10px;
+		}
+	}
+
+	&-content
+	{
+		padding: 20px;
+	}
+}
+
+// Panel on center of the page
+.panel-center-container
+{
+	display: flex;
+	min-height: 100%;
+	padding: 20px;
+
+	.panel
+	{
+		margin: auto;
+
+		&-header
+		{
+			text-align: center;
+		}
+	}
+}
+
+.panel-h-center-container
+{
+	width: 100%;
+}
+
+.panel-h-center-container > *
+{
+	margin: 0 auto;
+}
+
+// Blocks
+
+.warning-block
+{
+	display: block;
+	border-left: 3px solid $color-yellow;
+	padding: 5px 5px 5px 10px;
+
+}
+
+// Other
+
+hr
+{
+	border: none;
+	border-top: 1px dashed $color-hr;
+	margin: 20px 0;
+}
+
+.text
+{
+	&-center
+	{
+		text-align: center;
+	}
+
+	&-right
+	{
+		text-align: right;
+	}
+}
+
+.fill-width
+{
+	width: 100%;
+}
+
+.no-shrink
+{
+	flex-shrink: 0;
+}
+
+.copyright
+{
+	text-align: center;
+	font-weight: 300;
+	padding: $copy-padding;
+	font-size: $copy-font-size;
+	color: #808080;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+body:not(.wallet) .only-wallet,
+body.wallet .only-auth
+{
+	display: none !important;
+}
+
+svg.send-button-icon
+{
+	height: 24px;
+}
+
+.label-icon
+{
+	width: 14px;
+	height: 14px;
+
+	*
+	{
+		fill: $color-main;
+	}
+}
+
+.childs-v-middle > *
+{
+	vertical-align: middle;
+}
+
+%list-elements-margin
+{
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px dashed $color-hr;
+}

@@ -1,0 +1,65 @@
+.addr
+{
+	& + &
+	{
+		@extend %list-elements-margin;
+	}
+
+	&-inf
+	{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&-hidden
+	{
+		color: #808080;
+	}
+
+	&-tags > * + *
+	{
+		margin-left: 15px;
+	}
+
+	&-btns
+	{
+		margin-left: -20px;
+		margin-top: -10px;
+
+		> *
+		{
+			margin-left: 20px;
+			margin-top: 10px;
+		}
+	}
+
+}
+
+@include media-breakpoint-down(md)
+{
+	.addr-section
+	{
+		flex-direction: column;
+		align-items: stretch;
+	}
+}
+
+@include media-breakpoint-down(xs)
+{
+	.addr-inf
+	{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+// IPhone 4
+@include media-breakpoint-down(330px)
+{
+	.addr-inf
+	{
+		font-size: 11px;
+	}
+}

@@ -1,0 +1,68 @@
+
+.ir-cb
+{
+	&-hints
+	{
+		background: white;
+		border-bottom-left-radius: $input-border-radius;
+		border-bottom-right-radius: $input-border-radius;
+		border: 1px solid $color-input-border;
+		box-shadow: 0 3px 7px -1px rgba(0, 0, 0, .3);
+	}
+
+	&-hint
+	{
+		padding: $input-field-padding;
+		transition: .15s;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		&:hover,
+		&.selected
+		{
+			color: $color-main;
+			background: $color-bg-selection;
+		}
+	}
+}
+
+combo-box.select
+{
+	$padding: 10px;
+	$icon-width: 16px;
+
+	> input
+	{
+		padding-right: $padding * 2 + $icon-width;
+	}
+
+
+	.ir-cb-btn
+	{
+		position: absolute;
+		right: 1px;
+		height: 100%;
+		padding: 0 $padding;
+		background: none;
+		border: none;
+		border-left: 1px solid $color-input-border;
+		outline: none;
+		cursor: pointer;
+
+		svg
+		{
+			width: $icon-width;
+
+			*
+			{
+				fill: $color-input-border;
+				transition: .15s;
+			}
+		}
+
+		&:hover svg *
+		{
+			fill: $color-main;
+		}
+	}
+}

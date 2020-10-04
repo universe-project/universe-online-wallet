@@ -1,0 +1,38 @@
+
+.options-panel
+{
+	width: 500px;
+}
+
+.addr-sel-list
+{
+	> div
+	{
+		cursor: pointer;
+		padding: 5px;
+		color: $color-main;
+		border-radius: 2px;
+
+		&:hover
+		{
+			background: $color-bg-selection;
+			color: $color-main-darker;
+		}
+	}
+}
+
+.ir-pp-window
+{
+	&.change-email-window
+	{
+		max-width: 350px;
+	}
+}
+
+@include media-breakpoint-down(sm)
+{
+	.options-panel
+	{
+		width: auto;
+	}
+}

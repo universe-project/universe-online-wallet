@@ -1,0 +1,55 @@
+
+// Font
+
+$font: 'Open Sans', sans-serif;
+$font-mono: 'Fira Mono', monospace;
+$font-size: 14px;
+
+// Colors
+
+$color-main: #1990e2;
+$color-main-darker: #157bbf;
+$color-main-highlight: #4bb4fa;
+
+$color-green: #36c662;
+$color-green-darker: #2fad55;
+
+$color-red: #de634f;
+$color-red-darker: #bf5545;
+
+$color-yellow: #e2dc19;
+$color-yellow-darker: #bfb715;
+
+$color-bg: #f0f1f2;
+
+$color-input-border: #dedede;
+
+$color-bg-selection: #f9f9f9;
+
+$color-hr: #8d9ca6;
+
+// Text colors
+$color-text-default: rgba(0, 0, 0, .87);
+$color-text-control: white;
+$color-text-placeholder: #b2b2b2;
+
+// Copyright
+$copy-padding: 30px;
+$copy-font-size: 14px;
+
+// Z-Indexes
+
+
+
+// Other
+
+$content-padding: $copy-padding * 2 + $copy-font-size;
+
+$input-field-padding: 9px;
+$input-border-radius: 3px;
+
+// Size of the action buttons background
+$action-bg-size: 34px;
+
+// Size of the action buttons images
+$action-img-size: 24px;

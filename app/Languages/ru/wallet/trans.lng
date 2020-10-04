@@ -1,0 +1,57 @@
+# Транзакции
+> group: trans
+
+# Заголовок страницы
+title: Транзакции
+
+panel_ctrl: Управление списком
+panel_list: Список транзакций
+
+[group]
+	> keywords: client
+	trans: транзакция
+	in: Входящая
+	out: Исходящая
+	amount: Количество
+	type: Тип
+	mined: Добыто
+	received: Получено
+[end]
+
+[group:send]
+	> keywords: client
+	header: Отправка средств
+	address_pl: Адрес получателя...
+	amount_pl: Количество...
+	available: Доступно
+	fee: Комиссия
+	left: Остаток
+
+	err_header: Ошибка отправки
+	err_data: Укажите требуемые данные.
+
+	confirm_header: Подтверждение отправки средств
+	confirm_text: Для подтверждения требуется ввести PIN-код
+
+	success_text: Средства успешно отправлены на указанный адрес.
+[end:send]
+
+[group:ctrl]
+	type: Тип транзакции
+
+	[group]
+		> keywords: client
+		# Плейсхолдер комбобокса адреса
+		cb_pl: Адрес...
+	[end]
+[end:ctrl]
+
+[group:err]
+	above_zero: Количество должно быть больше нуля.
+	not_enough: На счету недостаточно средств.
+	fee_calc: Невозможно вычислить комиссию транзакции, так как превышен лимит итераций.
+	change_addr: Необходимо указать адрес для сдачи.
+	recipient_addr: Необходимо указать адрес получателя.
+	invalid_recipient: Указан неверный адрес получателя.
+	sign: Не удалось подписать транзакцию.
+[end:err]

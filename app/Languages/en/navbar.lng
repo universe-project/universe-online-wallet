@@ -1,0 +1,14 @@
+> group: navbar
+
+currency: Currency
+send_money: Send money
+lock_wallet: Lock the wallet
+change_lang: Change language
+exit: Exit
+
+[group:page]
+	main: Main
+	addresses: Addresses
+	transactions: Transactions
+	options: Options
+[end:page]

@@ -1,0 +1,88 @@
+> name: English
+> fallback: ru
+
+# Различные частоповторяющиеся фразы
+[group]
+	> keywords: client
+	ok: Ок
+	yes: Yes
+	no: No
+	edit: Edit
+	save: Save
+	del: Delete
+	add: Add
+	close: Close
+	date: Date
+	send: Send
+	cancel: Cancel
+	confirm: Confirm
+	change: Change
+	error: Error
+[end]
+
+help: Help
+
+total_balance: Total balance
+
+# "Секунд" и сокращённый вариант
+seconds: seconds
+seconds_s: sec.
+
+[group:captcha]
+	wrong: Invalid verification code entered.
+
+	[group]
+		> keywords: client
+		load_err: Failed to load the verification code. Contact the administrator.
+	[end]
+[end:captcha]
+
+[group:page]
+	# Ошибка - страница с указанным именем отсутствует в списке
+	[group:no_page]
+		> keywords: client
+		header: Page not found
+		text: Requested page <span class="text-mono">\{0}</span> is missing in list.
+	[end:no_page]
+
+	# Ошибка при загрузке страницы
+	[group:load_err]
+		> keywords: client
+		header: Page not loaded
+		text: Failed to load page <span class="text-mono">\{0}</span>.
+	[end:load_err]
+
+	# Ошибка HTTP при загрузке страницы
+	[group:http_err]
+		> keywords: client
+		header: Failed to load page!
+		text: An error occurred while loading the page. Please, contact the service administrator.
+	[end:http_err]
+[end:page]
+
+[group:exit]
+	> keywords: client
+	exit: Exit
+	question: Are you really want to exit?
+[end:exit]
+
+> include user
+> include navbar
+> include pin
+> include lang
+> include lock
+
+# До авторизации
+> include unauth/auth
+> include unauth/reg
+> include unauth/act
+> include unauth/lost_pwd
+
+# Кошелёк
+> include wallet/main
+> include wallet/addr
+> include wallet/trans
+> include wallet/options
+
+# Информация
+> include info/info

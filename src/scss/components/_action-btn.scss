@@ -1,0 +1,59 @@
+// Action button and popup close button
+
+.action-btn,
+.ir-pp-close-btn
+{
+	position: relative;
+	background: none;
+	padding: 0;
+	line-height: 0;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+
+	img, svg
+	{
+		width: $action-img-size;
+		height: $action-img-size;
+		z-index: 1;
+		position: relative;
+	}
+
+	// Fix for the border-bottom on the 'a.action-btn'
+	&:before
+	{
+		border: none;
+	}
+}
+
+.action-btn .ico-wrap,
+.ir-pp-close-btn,
+.ir-pp-close-btn
+{
+	position: relative;
+
+	&:before
+	{
+		content: '';
+		position: absolute;
+		width: $action-bg-size;
+		height: $action-bg-size;
+		top: calc((100% - #{$action-bg-size}) / 2);
+		left: calc((100% - #{$action-bg-size}) / 2);
+		border-radius: 3px;
+		background: transparent;
+		z-index: 0;
+		transition: .15s;
+		border: none;
+	}
+}
+
+.action-btn:hover .ico-wrap,
+.ir-pp-close-btn:hover
+{
+	&:before
+	{
+		background: $color-main-darker;
+	}
+}

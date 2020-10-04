@@ -1,0 +1,89 @@
+> name: Русский
+
+project_name: Universe Wallet
+
+# Различные частоповторяющиеся фразы
+[group]
+	> keywords: client
+	ok: Ок
+	yes: Да
+	no: Нет
+	edit: Редактировать
+	save: Сохранить
+	del: Удалить
+	add: Добавить
+	close: Закрыть
+	date: Дата
+	send: Отправить
+	cancel: Отменить
+	confirm: Подтвердить
+	change: Изменить
+	error: Ошибка
+[end]
+
+help: Помощь
+
+total_balance: Общий баланс
+
+# "Секунд" и сокращённый вариант
+seconds: секунд
+seconds_s: сек.
+
+[group:captcha]
+	wrong: Введён неверный проверочный код.
+
+	[group]
+		> keywords: client
+		load_err: Не удалось загрузить проверочный код. Свяжитесь с администратором.
+	[end]
+[end:captcha]
+
+[group:page]
+	# Ошибка - страница с указанным именем отсутствует в списке
+	[group:no_page]
+		> keywords: client
+		header: Страница не найдена
+		text: Запрашиваемая страница <span class="text-mono">\{0}</span> отсутствует в списке.
+	[end:no_page]
+
+	# Ошибка при загрузке страницы
+	[group:load_err]
+		> keywords: client
+		header: Страница не загружена
+		text: Не удалось загрузить страницу <span class="text-mono">\{0}</span>.
+	[end:load_err]
+
+	# Ошибка HTTP при загрузке страницы
+	[group:http_err]
+		> keywords: client
+		header: Не удалось загрузить страницу!
+		text: При загрузке страницы возникла ошибка. Пожалуйста, обратитесь к администрации сервиса.
+	[end:http_err]
+[end:page]
+
+[group:exit]
+	> keywords: client
+	exit: Выход
+	question: Вы действительно хотите выйти?
+[end:exit]
+
+> include user
+> include navbar
+> include pin
+> include lang
+> include lock
+
+# До авторизации
+> include unauth/auth
+> include unauth/reg
+> include unauth/act
+> include unauth/lost_pwd
+
+# Кошелёк
+> include wallet/main
+> include wallet/addr
+> include wallet/trans
+> include wallet/options
+
+# Информация
+> include info/info

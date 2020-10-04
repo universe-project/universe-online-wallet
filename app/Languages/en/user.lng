@@ -1,0 +1,31 @@
+# Данные пользователя
+> group: user
+
+# В верхнем регистре
+email: Email
+pass: Password
+
+# В нижнем регистре
+email_l: email
+
+[group]
+	> keywords: client
+	# Используется в интерфейса блокировки кошелька
+	pass_l: password
+[end]
+
+# Подсказка для пароля
+pass_tt: From 4 to 256 characters.
+# Подсказка для повтора пароля
+rep_pass_tt: Passwords must match.
+
+# Ошибки связанные с данными пользователя
+[group:err]
+	email: User with the specified email is not registered.
+	activate: Account is not activated.
+	pwd_match: Passwords do not match.
+	invalid_pass: Password does not match the requirements.
+	wrong_pass: Specified password is incorrect.
+	invalid_email: Email does not match the requirements.
+	email_taken: User with the specified email address is already registered.
+[end:err]

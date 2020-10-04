@@ -1,0 +1,71 @@
+# Восстановление пароля
+> group: lost_pwd
+
+# Сыылка на восстановление пароля на странице авторизации
+question: Forgot your password?
+
+[group]
+	> keywords: client
+	change: Password change
+[end]
+
+# Изменение отключено
+disabled: Password change is disabled. To recover access to your account, please contact administrator.
+
+# Страница запроса на изменение пароля
+[group:req]
+	[group]
+		> keywords: client
+
+		# Заголовок панели
+		header: Password change request
+
+		email_req: You must specify a email address!
+		captcha_req: You must enter a verification code!
+
+		# Сообщение об успешной подаче заявки на изменение пароля
+		success_msg: Password change request is successfully submitted. Message that contains a link to the password change page has been sent to your email address.
+	[end]
+
+	# Описание производимого действия
+	desc: To change the password, specify your registration email address and press the &ldquo;Send request&rdquo; button, whereupon email message will be sent containing link to the password change page.
+
+	email_pl: Enter email...
+	captcha_pl: Enter code...
+	captcha_label: Verification
+
+	# Текст кнопки
+	send: Send request
+
+	# Заявка на изменение уже отправлена
+	already: Password change request is already submitted earlier. If you have not receive the message, contact administrator.
+
+	# E-mail сообщение, содержащее ссылку на восстановление пароля
+	msg: {include pwd_ch_req_msg}
+[end:req]
+
+# Страница изменения пароля
+# Доступна после перехода по ссылке из сообщения на электронную почту
+[group:res]
+	# Плейсхолдеры полей ввода
+	pass_pl: Enter new password...
+	rep_pass_pl: Repeat new password...
+
+	# Текст кнопки
+	btn: Change password
+
+	# Ошибки от сервера
+	not_valid: Request for the password change is no longer valid.
+	wrong_key: Failed to change the password. Contact the administrator.
+
+	# Клиент
+	[group]
+		> keywords: client
+
+		# Если не указаны какие-либо требуемые данные
+		wrong_data: Invalid data entered!
+
+		# Успешное изменение пароля
+		success: Password successfully changed. After the window was closed, authorization page will be opened where you can login to your account using the new password.
+	[end]
+[end:res]

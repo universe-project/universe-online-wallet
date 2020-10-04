@@ -1,0 +1,13 @@
+
+.send-window
+{
+	width: 350px;
+}
+
+@include media-breakpoint-down(xs)
+{
+	.send-window
+	{
+		width: auto;
+	}
+}

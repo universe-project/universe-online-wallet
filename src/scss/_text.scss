@@ -1,0 +1,259 @@
+
+
+
+p
+{
+	margin: 0;
+	line-height: 20px;
+
+	+ p
+	{
+		margin-top: 15px;
+	}
+}
+
+small
+{
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 14px;
+
+	&.normal
+	{
+		font-weight: normal;
+	}
+
+	&.very
+	{
+		font-size: 9px;
+		line-height: 9px;
+	}
+}
+
+// Headers
+
+%header-common
+{
+	color: $color-text-default;
+	margin: 0;
+	line-height: 1;
+
+	* + &
+	{
+		margin-top: 30px;
+	}
+}
+
+h1
+{
+	@extend %header-common;
+	font-size: 60px;
+	font-weight: 300;
+}
+
+h2
+{
+	@extend %header-common;
+	font-size: 48px;
+	font-weight: 300;
+}
+
+h3
+{
+	@extend %header-common;
+	font-size: 36px;
+	font-weight: 300;
+}
+
+h4
+{
+	@extend %header-common;
+	font-size: 30px;
+	font-weight: 300;
+}
+
+h5
+{
+	@extend %header-common;
+	font-size: 24px;
+	font-weight: 300;
+}
+
+h6
+{
+	@extend %header-common;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+@for $i from 1 through 6
+{
+	h#{$i} + p,
+	h#{$i} + ul,
+	h#{$i} + ol
+	{
+		margin-top: 20px;
+	}
+}
+
+// Link
+
+a
+{
+	position: relative;
+	color: $color-main-darker;
+	text-decoration: none;
+	transition: .15s;
+
+	&:before
+	{
+		content: '';
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: 1px;
+		border-bottom: 1px dashed $color-main-darker;
+	}
+
+	&:hover
+	{
+		color: $color-main;
+
+		&:before
+		{
+			border-bottom-color: $color-main;
+		}
+	}
+
+	&:active,
+	&:hover,
+	&:focus
+	{
+		outline: none;
+	}
+}
+
+small a:before
+{
+	display: none;
+}
+
+// Lists
+
+ul, ol
+{
+	margin: 10px 0 0 10px;
+	padding: 0;
+
+	& + p
+	{
+		margin-top: 15px;
+	}
+}
+
+ul
+{
+	> li
+	{
+		&:before
+		{
+			content: '';
+			display: inline-block;
+			position: relative;
+			top: -2px;
+			vertical-align: middle;
+			width: 7px;
+			height: 7px;
+			background: $color-main;
+			border-radius: 50%;
+			margin-right: 7px;
+		}
+	}
+
+}
+
+ol
+{
+	> li
+	{
+		counter-increment: item;
+
+		&:before
+		{
+			content: counter(item) ". ";
+		}
+	}
+}
+
+li
+{
+	line-height: 18px;
+	list-style: none;
+
+	& + li
+	{
+		margin-top: 5px;
+	}
+}
+
+// Colors
+
+.text-error
+{
+	color: $color-red;
+}
+
+.text-success
+{
+	color: $color_green;
+}
+
+.text-warning
+{
+	color: $color-yellow-darker;
+}
+
+// Styles
+
+.text-mono
+{
+	font-family: $font-mono;
+	background: #f2f2f2;
+	border-radius: 5px;
+	padding: 3px 5px;
+}
+
+// Resize
+
+@include media-breakpoint-down(xs)
+{
+	h1
+	{
+		font-size: 48px;
+	}
+
+	h2
+	{
+		font-size: 36px;
+	}
+
+	h3
+	{
+		font-size: 30px;
+	}
+
+	h4
+	{
+		font-size: 24px;
+	}
+
+	h5
+	{
+		font-size: 18px;
+	}
+
+	h6
+	{
+		font-size: 14px;
+	}
+}

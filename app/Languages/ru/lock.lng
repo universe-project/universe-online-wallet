@@ -1,0 +1,19 @@
+# Блокировка кошелька
+> group: lock
+
+> keywords: client
+
+heading: Кошелёк заблокирован!
+pass_pl: Введите пароль...
+for_unlock: Для разблокировки введите
+or_exit: Или вы можете выйти
+
+[group:err]
+	[group]
+		> keywords: client
+		lock_header: Ошибка блокировки
+		lock_text: Не удалось заблокировать кошелёк!
+		unlock_header: Ошибка разблокировки
+		unlock_text: Не удалось разблокировать кошелёк!
+	[end]
+[end:err]

@@ -1,0 +1,57 @@
+# Транзакции
+> group: trans
+
+# Заголовок страницы
+title: Transactions
+
+panel_ctrl: List control
+panel_list: Transaction list
+
+[group]
+	> keywords: client
+	trans: transaction
+	in: Incoming
+	out: Outgoing
+	amount: Amount
+	type: Type
+	mined: Mined
+	received: Received
+[end]
+
+[group:send]
+	> keywords: client
+	header: Sending money
+	address_pl: Recipient address...
+	amount_pl: Amount...
+	available: Available
+	fee: Fee
+	left: Left
+
+	err_header: Send error
+	err_data: Enter the required data.
+
+	confirm_header: Sending money confirmation
+	confirm_text: Enter the PIN to confirm
+
+	success_text: Money successfully sent to the specified address.
+[end:send]
+
+[group:ctrl]
+	type: Transaction type
+
+	[group]
+		> keywords: client
+		# Плейсхолдер комбобокса адреса
+		cb_pl: Address...
+	[end]
+[end:ctrl]
+
+[group:err]
+	above_zero: Amount must be greater than zero.
+	not_enough: There are not enough money in the account.
+	fee_calc: Cannot calculate the transaction fee because of iterations limit.
+	change_addr: You must specify the address for the change from payment.
+	recipient_addr: You must specify the address of the recipient.
+	invalid_recipient: Specified address of the recipient is incorrect.
+	sign: Failed to sign the transaction.
+[end:err]

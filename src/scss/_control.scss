@@ -1,0 +1,335 @@
+
+
+// Buttons
+
+.btn
+{
+	background: $color-main;
+	color: $color-text-control;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+
+	position: relative;
+	padding: 10px 15px;
+
+	font-family: $font;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1;
+
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+
+	cursor: pointer;
+
+	transition: .15s;
+
+	&:hover,
+	&:focus
+	{
+		background: #1b9ef5;
+		box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2);
+	}
+
+	&:active
+	{
+		background: #157bbf;
+		color: #dfedf7;
+		box-shadow: none;
+	}
+
+	&:disabled
+	{
+		background: #74b6e3;
+		color: #f2f2f2;
+		box-shadow: none;
+		cursor: not-allowed;
+	}
+
+	// Хай будэ як ховэр
+	//&:focus
+	//{
+	//	&:before
+	//	{
+	//		content: '';
+	//		position: absolute;
+	//		background: white;
+	//		height: 100%;
+	//		width: 5px;
+	//		height: 5px;
+	//		top: 5px;
+	//		right: 5px;
+	//		border-radius: 50%;
+	//	}
+	//}
+
+	*
+	{
+		vertical-align: middle;
+	}
+
+	&-small
+	{
+		font-size: $font-size;
+		padding: 6px 10px;
+
+		//&:focus
+		//{
+		//	&:before
+		//	{
+		//		width: 3px;
+		//		height: 3px;
+		//		top: 3px;
+		//		right: 3px;
+		//	}
+		//}
+
+		.btn-icon
+		{
+			width: 12px;
+		}
+
+		.btn-icon-separator
+		{
+			margin: 0 8px;
+		}
+	}
+
+	&.only-icon
+	{
+		padding: 10px;
+		line-height: 0;
+
+		.btn-icon
+		{
+			width: 18px;
+		}
+	}
+
+	&-icon
+	{
+		height: 18px;
+		width: auto;
+	}
+
+	&-icon-separator
+	{
+		display: inline-block;
+		margin: 0 15px;
+
+		&:before
+		{
+			content: '';
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 1px;
+			background: #1e83c7;
+		}
+	}
+
+	&:not(&-small) span
+	{
+		position: relative;
+		top: -2px;
+	}
+}
+
+// Inputs
+
+%input-style
+{
+	border-radius: $input-border-radius;
+	border: 1px solid $color-input-border;
+	box-shadow: 0 2px 3px -1px rgba(0, 0, 0, .2);
+	background: white;
+}
+
+%input-text-style
+{
+	font: {
+		size: $font-size;
+		weight: 300;
+		family: $font;
+	};
+
+	line-height: $font-size;
+}
+
+.input-group
+{
+	> .input-label
+	{
+		display: block;
+
+		+ .input-field,
+		+ .input-field-icon-layout,
+		+ .input-group,
+		+ .input-group-horizontal,
+		+ combo-box
+		{
+			margin-top: 10px;
+		}
+	}
+
+	+ .input-group
+	{
+		margin-top: 20px;
+	}
+
+	&-horizontal
+	{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+}
+
+.input-field,
+combo-box > input
+{
+	@extend %input-style;
+	@extend %input-text-style;
+
+	padding: $input-field-padding;
+	outline: none;
+	color: $color-text-default;
+	transition: .15s;
+	vertical-align: middle;
+
+	// Потому что Firefox и Webkit обрабатывают line height по разному...
+	height: 40px;
+
+	@include placeholder
+	{
+		color: $color-text-placeholder;
+		//line-height: 14px;
+	}
+
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button
+	{
+		-webkit-appearance: none !important;
+		margin: 0 !important;
+		-moz-appearance:textfield !important;
+	}
+
+	&:focus
+	{
+		box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .2);
+		border: 1px solid $color-input-border;
+	}
+
+	&.touched:invalid,
+	&.error
+	{
+		color: #f15353;
+		border-color: #f2c2c2;
+
+		& + .input-field-icon-cnt
+		{
+			border-color: #f2c2c2;
+			.input-field-icon *
+			{
+				fill: #f2c2c2;
+			}
+		}
+	}
+
+	/// Input field with icon
+	&-icon-layout
+	{
+		$icon-container-width: 35px;
+
+		display: inline-block;
+		position: relative;
+
+		.input-field,
+		combo-box > input
+		{
+			padding-right: $icon-container-width + $input-field-padding;
+		}
+
+		.input-field-icon-cnt
+		{
+			$border-width: 1px;
+
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: $border-width;
+			width: $icon-container-width;
+
+			border-left: $border-width solid #dedede;
+		}
+
+		.input-field-icon
+		{
+			display: block;
+			height: 100%;
+			margin: 0 auto;
+			max-width: 16px;
+
+			*
+			{
+				fill: #dedede;
+			}
+		}
+	}
+}
+
+.input-field
+{
+	&:disabled
+	{
+		box-shadow: none;
+		background: #f7f7f7;
+	}
+}
+
+.input-label
+{
+	font-size: 16px;
+	line-height: 22px;
+	color: $color-text-default;
+}
+
+// Checkbox
+
+.input-checkbox
+{
+	display: none;
+
+	+ .input-label
+	{
+		user-select: none;
+
+		&:before
+		{
+			@extend %input-style;
+
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 28px;
+			width: 28px;
+			margin-right: 10px;
+			cursor: pointer;
+			background-size: 0;
+			background-position: center;
+			transition: .1s;
+		}
+
+		*
+		{
+			vertical-align: middle;
+		}
+	}
+
+	&:checked + .input-label:before
+	{
+		background: url('/img/icons/check-blue.svg') no-repeat center white;
+		background-size: 70%;
+	}
+}

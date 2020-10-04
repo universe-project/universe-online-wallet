@@ -1,0 +1,131 @@
+.stats
+{
+	&-block
+	{
+		display: flex;
+		border-radius: 5px;
+		overflow: hidden;
+		color: $color-text-control;
+
+		& + &
+		{
+			margin-top: 20px;
+		}
+	}
+
+	&-ico
+	{
+		width: 42px;
+		height: 42px;
+
+		&-wrap
+		{
+			padding: 20px;
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&-inf-wrap
+	{
+		padding: 20px 20px 15px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-h
+	{
+		font-size: 16px;
+	}
+
+	&-amount
+	{
+		font: {
+			family: $font-mono;
+			size: 24px;
+		};
+	}
+
+	&-balance
+	{
+		background: $color-main;
+
+		.stats-ico-wrap
+		{
+			background: $color-main-darker;
+		}
+	}
+
+	&-in
+	{
+		background: $color-green;
+
+		.stats-ico-wrap
+		{
+			background: $color-green-darker;
+		}
+	}
+
+	&-out
+	{
+		background: $color-red;
+
+		.stats-ico-wrap
+		{
+			background: $color-red-darker;
+		}
+	}
+}
+
+@media (min-width: 980px) and (max-width: 1590px)
+{
+	.main-section
+	{
+		display: block;
+		column-count: 2;
+		column-gap: 0;
+
+		> *
+		{
+			display: inline-block;
+		}
+	}
+}
+
+@include media-breakpoint-down(xs)
+{
+	.main-section
+	{
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.stats
+	{
+		&-ico
+		{
+			width: 36px;
+			height: 36px;
+
+			&-wrap
+			{
+				padding: 15px;
+			}
+		}
+
+		&-inf-wrap
+		{
+			padding: 15px;
+		}
+
+		&-h
+		{
+			font-size: 14px;
+		}
+
+		&-amount
+		{
+			font-size: 16px;
+		}
+	}
+}
